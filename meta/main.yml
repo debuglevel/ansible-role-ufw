@@ -1,9 +1,8 @@
----
 galaxy_info:
   author: Marc Kohaupt
   namespace: debuglevel
-  role_name: template
-  description: your role description
+  role_name: ufw
+  description: UFW firewall
   #company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -19,7 +18,7 @@ galaxy_info:
   # - CC-BY-4.0
   license: MIT
 
-  min_ansible_version: "2.14"
+  min_ansible_version: 2.1
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -42,13 +41,11 @@ galaxy_info:
   #   - 7
   #   - 99.99
 
-#  platforms:
-#    - name: Ubuntu
-#      versions:
-#        - xenial  # 16.04
-#        - bionic  # 18.04
-#        - focal  # 20.04
-#        - jammy  # 22.04
+  # platforms:
+  #   - name: Ubuntu
+  #     versions:
+  #       #- focal
+  #       - jammy
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes

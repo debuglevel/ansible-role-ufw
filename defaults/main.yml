@@ -1,1 +1,12 @@
 ---
+# Allow SSH by default so we usually don't lock ourselves out if no further rules are defined.
+ufw__rules:
+  - comment: "Allow incoming SSH traffic"
+    direction: in
+    protocol: tcp
+    port: 22
+    rule: allow
+
+# "deny" might be what nmap calls "filtered", whereas "reject" might be an actual closed port.
+# But not verified yet.
+ufw__default_policy: deny

@@ -1,10 +1,12 @@
-Role Name
+UFW Ansible role
 =========
 
-<!-- A brief description of the role goes here. -->
+Ensures the UFW firewall.
 
 Requirements
 ------------
+
+none
 
 <!-- Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required. -->
 
@@ -42,8 +44,8 @@ Using
 
 ```
 roles:
-  - name: debuglevel.template
-    src: https://github.com/debuglevel/ansible-role-template
+  - name: debuglevel.ufw
+    src: https://github.com/debuglevel/ansible-role-ufw
     version: <commit hash>
 ```
 

@@ -1,1 +1,24 @@
 ---
+- name: Ensure UFW package
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+    name: ufw
+    state: present
+
+- name: Ensure default policy
+  community.general.ufw:
+    policy: "{{ ufw__default_policy }}"
+
+- name: Ensure rules
+  community.general.ufw:
+    comment: "{{ item.comment }}"
+    direction: "{{ item.direction }}"
+    proto: "{{ item.protocol }}"
+    to_port: "{{ item.port }}"
+    rule: "{{ item.rule }}"
+  loop: "{{ ufw__rules }}"
+
+- name: Ensure UFW is enabled
+  community.general.ufw:
+    state: enabled

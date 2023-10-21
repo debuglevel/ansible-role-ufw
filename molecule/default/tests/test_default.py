@@ -1,5 +1,9 @@
 """Role testing files using testinfra."""
 
+def test_ufw_is_installed(host):
+    """Test if ufw is installed."""
+    assert host.package("ufw").is_installed
+
 def test_directories(host):
     """Validate service directories exists."""
     directories = [
